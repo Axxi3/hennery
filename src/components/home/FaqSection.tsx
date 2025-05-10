@@ -4,7 +4,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, Minus } from 'lucide-react';
 
-const faqs = [
+type FAQ = {
+  question: string;
+  answer: string;
+};
+
+const faqs: FAQ[] = [
   {
     question: "How is HenryBrandLabs different from other content agencies?",
     answer: "At HenryBrandLabs, we don't just \"do social media\" — we specialize in personal branding, Instagram marketing, LinkedIn marketing, and building organic ecosystems that turn followers into loyal fans. It's not about posting; it's about positioning you as a true authority."
@@ -31,9 +36,23 @@ const faqs = [
   }
 ];
 
-const FAQItem = ({ question, answer, isOpen, toggleOpen, index }) => {
+type FAQItemProps = {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+  toggleOpen: () => void;
+  index: number;
+};
+
+const FAQItem: React.FC<FAQItemProps> = ({
+  question,
+  answer,
+  isOpen,
+  toggleOpen,
+  index
+}) => {
   return (
-    <motion.div 
+    <motion.div
       className="border-b border-gray-700 py-6"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -43,19 +62,29 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen, index }) => {
         onClick={toggleOpen}
         className="flex justify-between items-center w-full text-left group"
       >
-        <h3 className="text-lg md:text-xl font-medium text-gray-100 group-hover:text-orange-500 transition-colors duration-300">{question}</h3>
-        <div className={`flex items-center justify-center w-8 h-8 rounded-full ml-4 flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-orange-500 rotate-180' : 'bg-gray-800'}`}>
-          {isOpen ? <Minus size={18} className="text-white" /> : <Plus size={18} className="text-orange-300" />}
+        <h3 className="text-lg md:text-xl font-medium text-gray-100 group-hover:text-orange-500 transition-colors duration-300">
+          {question}
+        </h3>
+        <div
+          className={`flex items-center justify-center w-8 h-8 rounded-full ml-4 flex-shrink-0 transition-all duration-300 ${
+            isOpen ? 'bg-orange-500 rotate-180' : 'bg-gray-800'
+          }`}
+        >
+          {isOpen ? (
+            <Minus size={18} className="text-white" />
+          ) : (
+            <Plus size={18} className="text-orange-300" />
+          )}
         </div>
       </button>
-      
+
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
+          <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
+            animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
             className="overflow-hidden"
           >
             <p className="mt-4 text-gray-300 leading-relaxed">{answer}</p>
@@ -66,13 +95,13 @@ const FAQItem = ({ question, answer, isOpen, toggleOpen, index }) => {
   );
 };
 
-export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(0); // First FAQ open by default
-  
+const FAQSection: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number>(0); // First FAQ open by default
+
   return (
-    <div className="w-full ">
+    <div className="w-full">
       <div className="max-w-4xl mx-auto px-6 md:px-8 py-20">
-        <motion.div 
+        <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,14 +110,14 @@ export default function FAQSection() {
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <div className="w-24 h-1  mx-auto mb-6"></div>
+          <div className="w-24 h-1 mx-auto mb-6"></div>
           <p className="text-xl text-gray-300">
             Everything you need to know about our services
           </p>
         </motion.div>
-        
-        <motion.div 
-          className="space-y-0 rounded-2xl  bg-opacity-50 backdrop-blur-sm p-6 md:p-10 shadow-2xl "
+
+        <motion.div
+          className="space-y-0 rounded-2xl bg-opacity-50 backdrop-blur-sm p-6 md:p-10 shadow-2xl"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -99,7 +128,9 @@ export default function FAQSection() {
               question={faq.question}
               answer={faq.answer}
               isOpen={index === openIndex}
-              toggleOpen={() => setOpenIndex(index === openIndex ? -1 : index)}
+              toggleOpen={() =>
+                setOpenIndex(index === openIndex ? -1 : index)
+              }
               index={index}
             />
           ))}
@@ -107,4 +138,6 @@ export default function FAQSection() {
       </div>
     </div>
   );
-}
+};
+
+export default FAQSection;

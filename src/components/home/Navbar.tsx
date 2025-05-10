@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import Link from "next/link";
+
 
 const navLinks = [
   { label: "Why Us", href: "#why-us" },
@@ -23,7 +23,7 @@ export default function Navbar() {
           
           {/* Center - Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navLinks.map((link, index) => (
+            {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
@@ -51,7 +51,7 @@ export default function Navbar() {
               href="#contact"
               className="inline-flex items-center px-4 py-1.5 bg-transparent hover:bg-gray-800 text-white rounded-full transition duration-150 ease-in-out"
             >
-              Let's Talk
+              Let&apos;s Talk
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-4 w-4 ml-1"
@@ -115,7 +115,7 @@ export default function Navbar() {
               className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-700"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Let's Talk
+              Let&apos;s Talk
             </a>
           </div>
         </div>
