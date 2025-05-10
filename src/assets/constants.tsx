@@ -1,4 +1,4 @@
-import { Logo } from "@/lib/types";
+import { Logo } from "@/assets/types";
 
 export const partnersLogos: Logo[] = [
   {
@@ -42,3 +42,8 @@ export const partnersLogos: Logo[] = [
     image: "https://framerusercontent.com/images/gtA2k0HxvLgyb2ShavqPh2ut8M.svg",
   },
 ];
+
+
+
+
+ 

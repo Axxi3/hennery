@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-import { partnersLogos } from "@/lib/constants";
+import { partnersLogos } from "@/assets/constants";
 
 
 
@@ -12,7 +12,7 @@ import { partnersLogos } from "@/lib/constants";
 export default function LogoTicker() {
     return <section className="py-12 overflow-x-clip ">
         <div className="w-full lg:px-15">
-            <h3 className="text-center text-black/60 text-xl">Already chosen by these market leaders</h3>
+            <h3 className="text-center text-white/60 text-xl">Already chosen by these market leaders</h3>
             <div className="flex overflow-hidden mt-12 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
                 <motion.div 
                 animate={{

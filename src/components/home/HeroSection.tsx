@@ -8,7 +8,7 @@ import Tag from "../ui/Tag";
 
 export const HeroSection = () => {
   return (
-    <section className=" bg-background relative overflow-hidden flex items-center">
+    <section className=" bg-background relative overflow-hidden mt-12 flex items-center">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
       </div>
