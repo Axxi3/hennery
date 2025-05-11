@@ -1,39 +1,99 @@
 "use client";
 import { cn } from "./utils";
 import React from "react";
-import { BentoGrid, BentoGridItem } from "./bento-grid";
+import {  BentoGridItem } from "./bento-grid";
+import { Variants } from "framer-motion";
 import {
-  IconBoxAlignRightFilled,
+  
   IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
+  
+  IconBrandInstagram,
+  IconBrush,
+  IconMicrophone,
+  IconVideo,
+  IconCurrencyDollar
 } from "@tabler/icons-react";
 import { motion } from "motion/react";
 
-
 export function BentoGridSecondDemo() {
   return (
-    <div className="container bg-black py-24">
-        <div className="max-w-6xl mx-auto text-center mb-12">
-        <p className="text-orange-500 font-medium mb-2">WHY US</p>
-        <h2 className="text-white text-4xl font-medium mb-3">Experience The Benefits Of Our Expertise</h2>
-       
-        <p className="text-gray-400">Real-world expertise, get powerful results</p>
+    <div className="w-full bg-black py-24">
+      <div className="max-w-6xl flex flex-col items-center mx-auto text-center mb-12">
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-orange-500 font-medium mb-2"
+        >
+          WHY US
+        </motion.p>
+        <motion.h2 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-white text-4xl font-medium mb-3"
+        >
+          What You Get
+        </motion.h2>
+        <motion.p 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-gray-400 max-w-4xl"
+        >
+          When you work with HenryBrandLabs, you&apos;re not just getting content — you&apos;re building a magnetic personal brand that commands attention and drives growth.
+        </motion.p>
       </div>
    
-    <BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem]">
-      {items.map((item, i) => (
-        <BentoGridItem
-          key={i}
-          title={item.title}
-          description={item.description}
-          header={item.header}
-          className={cn("[&>p:text-lg]", item.className)}
-          icon={item.icon}
-        />
-      ))}
-    </BentoGrid>
+      <div className="max-w-4xl px-8 mx-auto space-y-6">
+  {/* First Row: 3 items */}
+  <div className="flex flex-wrap md:flex-nowrap gap-4 items-stretch">
+    {items.slice(0, 3).map((item, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
+        className="flex-1 min-w-[calc(33.333%-1rem)] h-full"
+      >
+        <div className="h-full">
+          <BentoGridItem
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg]", item.className)}
+            icon={item.icon}
+          />
+        </div>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Second Row: 2 items */}
+  <div className="flex flex-wrap md:flex-nowrap gap-4 items-stretch">
+    {items.slice(3, 5).map((item, i) => (
+      <motion.div
+        key={i + 3}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+        className="flex-1 min-w-[calc(50%-1rem)] h-full"
+      >
+        <div className="h-full">
+          <BentoGridItem
+            title={item.title}
+            description={item.description}
+            header={item.header}
+            className={cn("[&>p:text-lg]", item.className)}
+            icon={item.icon}
+          />
+        </div>
+      </motion.div>
+    ))}
+  </div>
+</div>
+
+
     </div>
   );
 }
@@ -41,25 +101,25 @@ export function BentoGridSecondDemo() {
 const SkeletonOne = () => {
   const variants = {
     initial: {
-      x: 0,
+      opacity: 0.6,
     },
-    animate: {
-      x: 10,
-      rotate: 5,
+    hover: {
+      opacity: 1,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
       },
     },
   };
-  const variantsSecond = {
+  
+  const itemVariants = {
     initial: {
       x: 0,
     },
-    animate: {
-      x: -10,
-      rotate: -5,
+    hover: {
+      x: 10,
+      rotate: 5,
       transition: {
-        duration: 0.2,
+        duration: 0.3,
       },
     },
   };
@@ -67,206 +127,136 @@ const SkeletonOne = () => {
   return (
     <motion.div
       initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      whileHover="hover"
+      variants={variants}
+      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
     >
       <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-white dark:bg-black"
+        variants={itemVariants}
+        className="flex w-full flex-row rounded-lg border border-neutral-100 dark:border-white/[0.2] p-3 items-center space-x-3 bg-white dark:bg-black/70"
       >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
+        <div className="h-8 w-8 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center shrink-0">
+          <IconClipboardCopy className="h-4 w-4 text-white" />
+        </div>
+        <div className="h-4 w-full bg-orange-100 dark:bg-orange-900/20 rounded-full" />
       </motion.div>
+      
       <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
+        variants={itemVariants}
+        className="flex w-3/4 flex-row rounded-lg border border-neutral-100 dark:border-white/[0.2] p-3 items-center space-x-3 bg-white dark:bg-black/70"
       >
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
+        <div className="h-4 w-full bg-orange-100 dark:bg-orange-900/20 rounded-full" />
+        <div className="h-8 w-8 rounded-full bg-gradient-to-r from-orange-500 to-pink-500 flex items-center justify-center shrink-0">
+          <IconBrandInstagram className="h-4 w-4 text-white" />
+        </div>
       </motion.div>
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center space-x-2 bg-white dark:bg-black"
-      >
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
-        <div className="w-full bg-gray-100 h-4 rounded-full dark:bg-neutral-900" />
+      
+      <motion.div className="text-white/80 text-sm">
+        Craft your brand story, ICP research & content pillars
       </motion.div>
     </motion.div>
   );
 };
+
 const SkeletonTwo = () => {
-  const variants = {
+  const containerVariants = {
     initial: {
-      width: 0,
+      opacity: 0.6,
     },
-    animate: {
+    hover: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const itemVariants = {
+    initial: {
+      width: "70%",
+    },
+    hover: {
       width: "100%",
       transition: {
-        duration: 0.2,
+        duration: 0.5,
+        ease: "easeInOut",
       },
     },
+  };
+
+  const colors = [
+    "bg-gradient-to-r from-pink-500 to-purple-500",
+    "bg-gradient-to-r from-blue-500 to-teal-500",
+    "bg-gradient-to-r from-orange-500 to-amber-500",
+    "bg-gradient-to-r from-green-500 to-emerald-500",
+  ];
+
+  return (
+    <motion.div
+      initial="initial"
+      whileHover="hover"
+      variants={containerVariants}
+      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
+    >
+      {colors.map((color, i) => (
+        <motion.div
+          key={`design-element-${i}`}
+          variants={itemVariants}
+          className={`h-6 rounded-md ${color}`}
+          style={{
+            width: `${65 + Math.random() * 20}%`,
+            marginLeft: i % 2 === 0 ? "0" : "auto",
+          }}
+        />
+      ))}
+      
+      <motion.div className="text-white/80 text-sm text-center mt-2">
+        Visual identity & brand voice guidelines
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const SkeletonThree = () => {
+  const containerVariants = {
+    initial: {
+      opacity: 0.6,
+    },
     hover: {
-      width: ["0%", "100%"],
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+  
+  
+
+const microVariants: Variants = {
+  initial: { scale: 1 },
+  hover: {
+    scale: [1, 1.1, 1],
+    transition: {
+      duration: 1.5,
+      repeat: Infinity,
+      repeatType: "loop",
+    },
+  },
+};
+
+
+  const wavesVariant:Variants = {
+    initial: {
+      opacity: 0.5,
+      scale: 1,
+    },
+    hover: {
+      opacity: [0.2, 0.8, 0.2],
+      scale: [1, 1.2, 1],
       transition: {
         duration: 2,
-      },
-    },
-  };
-  const arr = new Array(6).fill(0);
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
-    >
-      {arr.map((_, i) => (
-        <motion.div
-          key={"skelenton-two" + i}
-          variants={variants}
-          style={{
-            maxWidth: Math.random() * (100 - 40) + 40 + "%",
-          }}
-          className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2  items-center space-x-2 bg-neutral-100 dark:bg-black w-full h-4"
-        ></motion.div>
-      ))}
-    </motion.div>
-  );
-};
-const SkeletonThree = () => {
-  const variants = {
-    initial: {
-      backgroundPosition: "0 50%",
-    },
-    animate: {
-      backgroundPosition: ["0, 50%", "100% 50%", "0 50%"],
-    },
-  };
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      variants={variants}
-      transition={{
-        duration: 5,
         repeat: Infinity,
-        repeatType: "reverse",
-      }}
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] rounded-lg bg-dot-black/[0.2] flex-col space-y-2"
-      style={{
-        background:
-          "linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)",
-        backgroundSize: "400% 400%",
-      }}
-    >
-      <motion.div className="h-full w-full rounded-lg"></motion.div>
-    </motion.div>
-  );
-};
-const SkeletonFour = () => {
-  const first = {
-    initial: {
-      x: 20,
-      rotate: -5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
-  };
-  const second = {
-    initial: {
-      x: -20,
-      rotate: 5,
-    },
-    hover: {
-      x: 0,
-      rotate: 0,
-    },
-  };
-  return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      whileHover="hover"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-row space-x-2"
-    >
-      <motion.div
-        variants={first}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
-      >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Just code in Vanilla Javascript
-        </p>
-        <p className="border border-red-500 bg-red-100 dark:bg-red-900/20 text-red-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Delusional
-        </p>
-      </motion.div>
-      <motion.div className="h-full relative z-20 w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center">
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          Tailwind CSS is cool, you know
-        </p>
-        <p className="border border-green-500 bg-green-100 dark:bg-green-900/20 text-green-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Sensible
-        </p>
-      </motion.div>
-      <motion.div
-        variants={second}
-        className="h-full w-1/3 rounded-2xl bg-white p-4 dark:bg-black dark:border-white/[0.1] border border-neutral-200 flex flex-col items-center justify-center"
-      >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="sm:text-sm text-xs text-center font-semibold text-neutral-500 mt-4">
-          I love angular, RSC, and Redux.
-        </p>
-        <p className="border border-orange-500 bg-orange-100 dark:bg-orange-900/20 text-orange-600 text-xs rounded-full px-2 py-0.5 mt-4">
-          Helpless
-        </p>
-      </motion.div>
-    </motion.div>
-  );
-};
-const SkeletonFive = () => {
-  const variants = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: 10,
-      rotate: 5,
-      transition: {
-        duration: 0.2,
-      },
-    },
-  };
-  const variantsSecond = {
-    initial: {
-      x: 0,
-    },
-    animate: {
-      x: -10,
-      rotate: -5,
-      transition: {
-        duration: 0.2,
+        repeatType: "loop",
       },
     },
   };
@@ -274,41 +264,160 @@ const SkeletonFive = () => {
   return (
     <motion.div
       initial="initial"
-      whileHover="animate"
-      className="flex flex-1 w-full h-full min-h-[6rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col space-y-2"
+      whileHover="hover"
+      variants={containerVariants}
+      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
     >
-      <motion.div
-        variants={variants}
-        className="flex flex-row rounded-2xl border border-neutral-100 dark:border-white/[0.2] p-2  items-start space-x-2 bg-white dark:bg-black"
+      <motion.div 
+        variants={microVariants}
+        
+        className="h-16 w-16 rounded-full bg-gradient-to-r from-orange-500 to-red-600 flex items-center justify-center z-10"
       >
-        <img
-          src="https://pbs.twimg.com/profile_images/1417752099488636931/cs2R59eW_400x400.jpg"
-          alt="avatar"
-          height="100"
-          width="100"
-          className="rounded-full h-10 w-10"
-        />
-        <p className="text-xs text-neutral-500">
-          There are a lot of cool framerworks out there like React, Angular,
-          Vue, Svelte that can make your life ....
-        </p>
+        <IconMicrophone className="h-8 w-8 text-white" />
       </motion.div>
-      <motion.div
-        variants={variantsSecond}
-        className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white dark:bg-black"
-      >
-        <p className="text-xs text-neutral-500">Use PHP.</p>
-        <div className="h-6 w-6 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 shrink-0" />
+      
+      {[1, 2, 3].map((_, i) => (
+        <motion.div
+          key={`wave-${i}`}
+          variants={wavesVariant}
+          className="absolute h-16 w-16 rounded-full border-2 border-orange-500"
+          style={{
+            scale: 1 + (i * 0.3),
+          }}
+        />
+      ))}
+      
+      <motion.div className="text-white/80 text-sm text-center mt-6 z-10">
+        Just 1-2 hours a week of effortless content creation
       </motion.div>
     </motion.div>
   );
 };
+
+const SkeletonFour = () => {
+  const containerVariants = {
+    initial: {
+      opacity: 0.6,
+    },
+    hover: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const videoVariants: Variants = {
+    initial: {
+      y: 0,
+      x: 0,
+    },
+    hover: (i: number) => ({
+      y: i % 2 === 0 ? -5 : 5,
+      x: i % 3 === 0 ? -5 : i % 3 === 1 ? 5 : 0,
+      transition: {
+        duration: 1,
+        repeat: Infinity,
+        repeatType: "reverse",
+      },
+    }),
+  };
+
+  const platforms = [
+    { name: "Instagram", color: "bg-gradient-to-r from-purple-600 to-pink-500" },
+    { name: "LinkedIn", color: "bg-gradient-to-r from-blue-600 to-blue-400" },
+    { name: "YouTube", color: "bg-gradient-to-r from-red-600 to-red-400" },
+    { name: "Twitter", color: "bg-gradient-to-r from-blue-400 to-blue-300" },
+    { name: "TikTok", color: "bg-gradient-to-r from-black to-gray-800" },
+  ];
+
+  return (
+    <motion.div
+      initial="initial"
+      whileHover="hover"
+      variants={containerVariants}
+      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
+    >
+      <div className="grid grid-cols-3 gap-3 w-full">
+        {platforms.map((platform, i) => (
+          <motion.div
+            custom={i}
+            variants={videoVariants}
+            key={`platform-${i}`}
+            className={`rounded-lg ${platform.color} p-3 flex items-center justify-center h-16 ${i === 4 && "col-span-3"}`}
+          >
+            <IconVideo className="h-5 w-5 text-white mr-2" />
+            <span className="text-white text-xs font-medium">{platform.name}</span>
+          </motion.div>
+        ))}
+      </div>
+      
+      <motion.div className="text-white/80 text-sm text-center mt-4">
+        Polished videos, posts & consistent distribution
+      </motion.div>
+    </motion.div>
+  );
+};
+
+const SkeletonFive = () => {
+  const containerVariants = {
+    initial: {
+      opacity: 0.6,
+    },
+    hover: {
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
+  const growVariants = {
+    initial: {
+      height: "30%",
+    },
+    hover: (custom: number) => ({
+      height: `${30 + custom * 15}%`,
+      transition: {
+        duration: 0.5,
+        delay: custom * 0.1,
+      },
+    }),
+  };
+
+  return (
+    <motion.div
+      initial="initial"
+      whileHover="hover"
+      variants={containerVariants}
+      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
+    >
+      <div className="w-full h-48 flex items-end justify-around mb-4">
+        {[1, 2, 3, 4, 5].map((_, i) => (
+          <motion.div
+            custom={i}
+            variants={growVariants}
+            key={`bar-${i}`}
+            className="w-12 bg-gradient-to-t from-green-600 to-green-400 rounded-t-md flex items-center justify-center"
+          >
+            <IconCurrencyDollar className="h-6 w-6 text-white" />
+          </motion.div>
+        ))}
+      </div>
+      
+      <motion.div className="text-white/80 text-sm text-center">
+        Turn your audience into loyal, paying customers
+      </motion.div>
+    </motion.div>
+  );
+};
+
 const items = [
   {
-    title: "AI Content Generation",
+    title: "Complete Brand Strategy",
     description: (
       <span className="text-sm">
-        Experience the power of AI in generating unique content.
+        A clear roadmap for your brand story, audience, content pillars, and launch plan.
       </span>
     ),
     header: <SkeletonOne />,
@@ -316,48 +425,48 @@ const items = [
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Automated Proofreading",
+    title: "Custom Content Design System",
     description: (
       <span className="text-sm">
-        Let AI handle the proofreading of your documents.
+        A unique visual style and voice — consistent across all your platforms.
       </span>
     ),
     header: <SkeletonTwo />,
     className: "md:col-span-1",
-    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+    icon: <IconBrush className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Contextual Suggestions",
+    title: "Effortless Content Pre-Production",
     description: (
       <span className="text-sm">
-        Get AI-powered suggestions based on your writing context.
+        Record for 1–2 hours weekly, we handle the rest to make content easy.
       </span>
     ),
     header: <SkeletonThree />,
     className: "md:col-span-1",
-    icon: <IconSignature className="h-4 w-4 text-neutral-500" />,
+    icon: <IconMicrophone className="h-4 w-4 text-neutral-500" />,
   },
   {
-    title: "Sentiment Analysis",
+    title: "Full Post-Production & Distribution",
     description: (
       <span className="text-sm">
-        Understand the sentiment of your text with AI analysis.
+        We edit, polish, and post your content to grow your reach and authority.
       </span>
     ),
     header: <SkeletonFour />,
-    className: "md:col-span-2",
-    icon: <IconTableColumn className="h-4 w-4 text-neutral-500" />,
+    className: "md:col-span-2 md:row-start-2",
+    icon: <IconVideo className="h-4 w-4 text-neutral-500" />,
   },
-
   {
-    title: "Text Summarization",
+    title: "Monetize With Smart Backend Systems",
     description: (
       <span className="text-sm">
-        Summarize your lengthy documents with AI technology.
-      </span>
+  We build your website, funnels, and automations to seamlessly convert your growing audience into loyal, paying customers—aligned with your brand goals.
+</span>
+
     ),
     header: <SkeletonFive />,
-    className: "md:col-span-1",
-    icon: <IconBoxAlignRightFilled className="h-4 w-4 text-neutral-500" />,
+    className: "md:col-span-1 md:row-start-2 md:col-start-3",
+    icon: <IconCurrencyDollar className="h-4 w-4 text-neutral-500" />,
   },
 ];

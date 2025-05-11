@@ -1,6 +1,5 @@
 import { Brain, Lightbulb, Users } from "lucide-react";
 import Card from "../ui/Card";
-import Button from "../ui/button";
 
 
 export default function CardContainer() {
@@ -9,44 +8,56 @@ export default function CardContainer() {
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <p className="text-orange-500 font-medium mb-2">WHY US</p>
-        <h2 className="text-white text-4xl font-medium mb-3">Experience The Benefits Of Our Expertise</h2>
-       
-        <p className="text-gray-400">Real-world expertise, get powerful results</p>
+        <h2 className="text-white text-4xl font-medium mb-3">Why Henry Brand Labs?</h2>
+        <p className="text-gray-400">Because good content is everywhere. But great brands? They&apos;re built differently.</p>
       </div>
 
-      {/* Cards Container */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {/* Card 1 */}
-        <Card 
-          icon={<Brain className="w-[35px] h-[35px]" />}
-          title="Innovative Approach"
-          description="Look for works that reflect a unique character and differentiate in a crowded marketplace."
-        />
-
-        {/* Card 2 */}
-        <Card 
-          icon={<Lightbulb className="w-[35px] h-[35px]" />}
-          title="Seamless Experience"
-          description="Smooth user journey flows across all devices, ensuring every interaction connects with the user."
-        />
-
-        {/* Card 3 */}
-        <Card 
-          icon={<Users className="w-[35px] h-[35px]" />}
-          title="Ongoing Partnership"
-          description="From initial partner scoping and job planning, and after ongoing support even after the project ends."
-        />
+      {/* Cards using Flex */}
+      <div className="flex justify-center w-full">
+        <div className="flex flex-wrap justify-center gap-6 w-full mx-auto">
+          {/* First Row - 3 Cards */}
+          <Card 
+            icon={<Brain className="w-8 h-8" />}
+            title="Founder-First Approach"
+            description="We build brands around you — your voice, your story, your expertise. No cookie-cutter strategies. No fake personas."
+          />
+          <Card 
+            icon={<Lightbulb className="w-8 h-8" />}
+            title="Strategy Before Content"
+            description="We dig deep before we create. Research, positioning, ICP clarity, brand story — so every post moves you closer to your goals."
+          />
+          <Card 
+            icon={<Users className="w-8 h-8" />}
+            title="Creative That Converts"
+            description="Our design, scripts, and systems are crafted not just to look good — but to drive leads, trust, and sales."
+          />
+          
+          {/* Second Row - 2 Cards */}
+          <Card 
+            icon={<Users className="w-8 h-8" />}
+            title="Multi-Platform Execution"
+            description="From Instagram to LinkedIn, we optimize your presence everywhere your audience lives — consistently and predictably."
+          />
+          <Card 
+            icon={<Users className="w-8 h-8" />}
+            title="Done-With-You, Not Just Done-For-You"
+            description="We collaborate with you, not just for you. Your brand stays authentic, your voice stays true — we just scale it."
+          />
+        </div>
       </div>
 
       {/* CTA Button */}
-      <div className="flex justify-center mt-12">
-        <Button variant="primary" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 flex items-center gap-2">
-          Start Pricing
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
-            <path d="m9 18 6-6-6-6"/>
-          </svg>
-        </Button>
-      </div>
+      {/* <div className="w-full px-[20%] flex-col  items-center justify-center mt-[30px] hidden lg:flex gap-10">
+          <div className="w-full items-center justify-center flex gap-10">
+            <Tag>Strategy before creation</Tag>
+            <Tag>Content designed for trust and growth</Tag>
+            </div>
+            <div className="w-full items-center justify-center flex gap-10">
+            <Tag>Consistent, multi-platform distribution</Tag>
+            <Tag>Systems that scale your brand — and your business</Tag>
+            </div>
+        
+        </div> */}
     </div>
   );
 }

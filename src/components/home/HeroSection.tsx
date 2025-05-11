@@ -25,25 +25,25 @@ export const HeroSection = () => {
             <Tag>
               <span className="">
               <span className="mr-1.5 h-2 w-2 rounded-full "></span>
-              Available now, only 3 spots left
+              BEST AGENCY EVER
             </span>
             </Tag>
           
           </motion.div>
           
           <motion.h1 
-            className="text-[60px] font-sans font-medium tracking-tight mb-6"
+            className="md:text-[60px]  text-[40px] font-sans font-medium tracking-tight mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="text-orange-400">Automation Agency</span>
+            <span className="text-orange-400">Build a personal brand </span>
             <br />
             <span className="relative">
-              Beyond<span className="inline-block mx-2">◆</span>Limits.
+            that gets  <span className="inline-block md:mx-2">◆</span>seen
             </span>
             <br />
-            <span className="text-orange-400">Amplified With AI.</span>
+            <span className="text-orange-400">trusted and followed.</span>
           </motion.h1>
           
           <motion.p 
@@ -52,7 +52,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Design services at your fingertips. Pause or cancel anytime.
+            We help entrepreneurs become unforgettable, with content and media that builds trust and drives growth.
           </motion.p>
           
           <motion.div

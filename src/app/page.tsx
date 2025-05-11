@@ -11,6 +11,7 @@ import Process from "@/components/home/ProcessContainer";
 import { BentoGridSecondDemo } from "@/grid/bentogridcolumn";
 import FAQSection from "@/components/home/FaqSection";
 import Foot from "@/components/home/Footer";
+import HenneryCardContainer from "@/components/home/HenneryCard";
 
 
 
@@ -25,9 +26,11 @@ export default function Home() {
       <LogoTicker />
 
       <CardContainer/>
+   
       <Introduction/>
       <StatsSection/>
       <TabSection/>
+      <HenneryCardContainer/>
       <Process/>
       <BentoGridSecondDemo/>
       <FAQSection/>

@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Tag from "../ui/Tag";
 
-const text = `We're a team of brand builders, content creators, and media pros helping founders become trusted authorities—no ads, no gimmicks.
-At Henry Brand Labs, we combine strategy and creativity to grow awareness, drive engagement, and build loyal audiences.`;
+const text = `At Henry Brand Labs, we believe branding is about more than just visibility — it's about creating lasting impact. 
+Para - Our team of strategists, designers, and media experts crafts custom brand strategies to build loyalty, drive engagement, and ensure long-term success.`;
 const words = text.split(" "); // Split by spaces to get words
 
 export default function Introduction() {
@@ -28,7 +28,7 @@ export default function Introduction() {
     }, [wordIndex]);
 
     return (
-        <section className="py-24 relative lg:px-40">
+        <section className="py-24 relative flex flex-col justify-center items-center lg:px-40">
             <div className="md:w-full container relative md:px-[4%]">
                 <div className="sticky top-5 lg:top-36"> {/* Adjusted sticky positioning */}
                     <div className="flex justify-center">
@@ -51,7 +51,7 @@ export default function Introduction() {
                             ))}
                         </div>
                         <span className="text-[#E87811] block mt-4">
-                            That&apos;s why we started Techidata.
+                            That&apos;s why we started Henry Brand Labs.
                         </span>
                     </div>
                 </div>

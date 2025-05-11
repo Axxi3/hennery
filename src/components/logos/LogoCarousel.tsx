@@ -28,7 +28,7 @@ export default function LogoTicker() {
                         Array.from({length: 2}).map((_, i)=>(
                             <React.Fragment key={i}>
                              {partnersLogos.map((logo, index) => (
-                       <Image src={logo.image} key={index} width={155} height={35} alt={logo.name} />
+                       <Image src={logo.image} key={index} width={125} height={28} alt={logo.name} />
                     ))}
                             </React.Fragment>
                     

@@ -9,18 +9,18 @@ import TabButton from '../ui/TabButton';
 
  const showcaseData = [
     {
-      heading: "Grapho AI",
-      description: "We leverage AI to create impactful experiences that transform every interaction.",
+      heading: "D2C Founders & Entrepreneurs",
+      description: "Build trust and visibility by becoming the face of your brand.",
       image: "https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg"
     },
     {
-      heading: "VectraOps",
-      description: "Redesigned e-commerce platform with 34% increase in sales.",
+      heading: "Coaches & Early-Stage Creators",
+      description: "Grow your audience and authority without relying on ads.",
       image: "https://images.pexels.com/photos/7989247/pexels-photo-7989247.jpeg"
     },
     {
-      heading: "Signum",
-      description: "Brand identity refresh leading to 67% more customers.",
+      heading: "Established Founders",
+      description: "Level up your personal brand and unlock new opportunities.",
       image: "https://images.pexels.com/photos/8348457/pexels-photo-8348457.jpeg"
     }
   ];
