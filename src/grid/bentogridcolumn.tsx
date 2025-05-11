@@ -45,16 +45,16 @@ export function BentoGridSecondDemo() {
         </motion.p>
       </div>
    
-      <div className="max-w-4xl px-8 mx-auto space-y-6">
+      <div className="max-w-4xl px-6 mx-auto space-y-6">
   {/* First Row: 3 items */}
-  <div className="flex flex-wrap md:flex-nowrap gap-4 items-stretch">
+  <div className="flex flex-col md:flex-row gap-4 items-stretch">
     {items.slice(0, 3).map((item, i) => (
       <motion.div
         key={i}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-        className="flex-1 min-w-[calc(33.333%-1rem)] h-full"
+        className="flex-1"
       >
         <div className="h-full">
           <BentoGridItem
@@ -70,14 +70,14 @@ export function BentoGridSecondDemo() {
   </div>
 
   {/* Second Row: 2 items */}
-  <div className="flex flex-wrap md:flex-nowrap gap-4 items-stretch">
+  <div className="flex flex-col md:flex-row gap-4 items-stretch">
     {items.slice(3, 5).map((item, i) => (
       <motion.div
         key={i + 3}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-        className="flex-1 min-w-[calc(50%-1rem)] h-full"
+        className="flex-1"
       >
         <div className="h-full">
           <BentoGridItem
@@ -92,6 +92,7 @@ export function BentoGridSecondDemo() {
     ))}
   </div>
 </div>
+
 
 
     </div>
