@@ -5,7 +5,7 @@ import HenneryTag from "../ui/HenneryTags";
 // Make sure this is the updated tag
 export default function HenneryCardContainer() {
   return (
-    <div className="w-full bg-black min-h-screen py-16 px-4">
+    <div id="why-us" className="w-full bg-black min-h-screen py-16 px-4">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
         <p className="text-orange-500 font-medium mb-2">WHY US</p>
@@ -29,8 +29,8 @@ export default function HenneryCardContainer() {
           />
           <HenneryCard 
             icon={<Rocket className="w-8 h-8" />}
-            title="Drive Business Results"
-            description="Beyond likes — we use strategy, automation, and audience building to turn your brand into a lead-generating, opportunity-driving engine."
+            title="Convert Attention into Growth"
+            description="We turn your brand into a magnet for leads, collaborations, and business outcomes — through smart systems, not gimmicks."
           />
         </div>
       </div>
@@ -38,10 +38,10 @@ export default function HenneryCardContainer() {
       {/* Strategy Tags Section */}
       <div className="w-full flex flex-col items-center justify-center mt-12 gap-4">
         <div className="flex flex-wrap justify-center gap-4 max-w-4xl">
-          <HenneryTag name="Strategy before creation" icon={<Lightbulb className="w-4 h-4" />} />
+          <HenneryTag name="Strategy-Driven Content" icon={<Lightbulb className="w-4 h-4" />} />
           <HenneryTag name="Content designed for trust and growth" icon={<Brain className="w-4 h-4" />} />
           <HenneryTag name="Consistent, multi-platform distribution" icon={<Rocket className="w-4 h-4" />} />
-          <HenneryTag name="Systems that scale your brand — and your business" icon={<Rocket className="w-4 h-4" />} />
+          <HenneryTag name="Data-Backed Improvements" icon={<Rocket className="w-4 h-4" />} />
         </div>
       </div>
     </div>

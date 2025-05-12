@@ -3,11 +3,10 @@ import { useState } from "react";
 
 
 const navLinks = [
-  { label: "Why Us", href: "#why-us" },
-  { label: "Mission", href: "#mission" },
-  { label: "Works", href: "#works" },
-  { label: "Services", href: "#services" },
-  { label: "Pages", href: "#pages" },
+  { label: "About us", href: "#about-us" },
+  { label: "Why us", href: "#why-us" },
+  { label: "Process", href: "#process" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -30,17 +29,7 @@ export default function Navbar() {
                 className="text-gray-300 hover:text-white transition duration-150 ease-in-out text-base"
               >
                 {link.label}
-                {link.label === "Pages" && (
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    className="h-4 w-4 ml-1 inline-block" 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
-                    stroke="currentColor"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-                )}
+               
               </a>
             ))}
           </nav>

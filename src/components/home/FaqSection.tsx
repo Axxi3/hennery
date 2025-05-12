@@ -99,7 +99,7 @@ const FAQSection: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number>(0); // First FAQ open by default
 
   return (
-    <div className="w-full">
+    <div id='faq' className="w-full">
       <div className="max-w-4xl mx-auto px-6 md:px-8 py-20">
         <motion.div
           className="text-center mb-16"

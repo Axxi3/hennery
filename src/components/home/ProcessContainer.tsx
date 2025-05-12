@@ -15,7 +15,7 @@ export default function Process(): JSX.Element {
   const x = useTransform(scrollYProgress, [0, 1], ['43%', '-40%']);
 
   return (
-    <div className="md:h-[550dvw] w-full md:mb-0 mb-[80px]" id="process" ref={targetRef}>
+    <div  className="md:h-[550dvw] w-full md:mb-0 mb-[80px]" id="process" ref={targetRef}>
       <div className="w-full sticky top-7 md:h-screen mt-[180px] flex flex-col gap-[15px] justify-center">
         {/* Section Title */}
         <div className="w-full flex items-center justify-center gap-2">
@@ -79,9 +79,10 @@ export default function Process(): JSX.Element {
                 <div className="text-[28px] md:text-[35px] opacity-75">0{index + 1}</div>
                 <h3 className="text-[22px] md:text-[26px] tracking-tight">{item.tag}</h3>
                 <p className="text-[16px] md:text-[18px] opacity-75">{item.body}</p>
-                <p className="text-[14px] md:text-[15px] rounded-4xl flex w-fit px-4 py-1 mt-5 text-black bg-[#49AA3B] mx-auto">
-                  {item.output}
-                </p>
+               <p className="text-[14px] md:text-[15px] rounded-4xl flex w-fit px-4 py-1 mt-5 text-black bg-[#49AA3B] mx-auto">
+  Output: {item.output}
+</p>
+
               </div>
             </div>
           ))}

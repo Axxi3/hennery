@@ -4,36 +4,36 @@ import preProductionIcon from "./3.svg";
 import postProductionIcon from "./4.svg";
 import backendAutomationIcon from "./5.svg";
 const processSteps = [
- 
   {
-    tag: "Strategy and foundation",
-    body: "The process begins by getting out what’s in your head, out of your head. We give you 100% clarity after taking short interviews, researching your ICP, building a brand story and other assets, helping you gain crystal clarity about your brand’s content direction.",
-    output: "Strategy, brand story, and trust profile",
+    tag: "Strategy & Foundation",
+    body: "We kick things off by getting everything out of your head and into a system. Through quick founder interviews, ICP research, and brand story development, we create 100% clarity about your content direction and positioning.",
+    output: "Output: Crystal-clear brand strategy, brand story, and content direction.",
     icon: strategyIcon
   },
   {
     tag: "Content Design",
-    body: "Consistency means trust and with a solid foundation we will design the visual guidelines for editing your content. This builds authority and trust already warranted by your expertise.\n\nAlready have a brand? We will build a complimentary visual identity specific to videos.",
-    output: "Visual identity",
+    body: "Consistency builds trust. We design your personal brand’s visual identity, tone, and style specifically for Instagram and LinkedIn. Already have a brand? We’ll create a complementary video and social identity that fits you perfectly.",
+    output: "Output: Customized visual and messaging guidelines.",
     icon: contentDesignIcon
   },
   {
     tag: "Pre-Production",
-    body: "This is where you invest 1 hour a week and record a podcast with an industry expert, interview with our team, or record long-form videos from the scripts we send.\n\nNo overthinking, no confusion - Always create with confidence.",
-    output: "Systematic scheduling process",
+    body: "Spend just 1–2 hours a week — sharing insights or recording from ready-to-go scripts we send you. Whether it's a business aha moment or a deep-dive interview, we capture your real voice without overthinking or wasting time.",
+    output: "Output: A steady flow of authentic, authority-driven raw content.",
     icon: preProductionIcon
   },
   {
-    tag: "Post-Production",
-    body: "We take all the raw content and our team turns it into authority-driven content that builds trust for your brand at scale. We create and post 20 videos a month on every platform mainly - Instagram, YouTube, and Linkedin.",
-    output: "5 videos every week",
+    tag: "Post-Production & Distribution",
+    body: "We turn your raw videos, scripts, and interviews into authority-building content for Instagram and LinkedIn. Expect polished edits, powerful carousels, and consistent posting that builds trust at scale.",
+    output: "Output: High-quality content across key platforms.",
     icon: postProductionIcon
   },
   {
-    tag: "Backend automation",
-    body: "If you sell info-products we set automation and backend systems to predictably convert your followers into paying customers.",
-    output: "Consistent organic leads",
+    tag: "Backend Automation",
+    body: "Selling info-products, courses, or consulting offers? We set up custom websites, landing pages, and lead funnels — so your content drives real conversion.",
+    output: "Output: Predictable lead flow and monetization system.",
     icon: backendAutomationIcon
   }
 ];
+
 export default processSteps;

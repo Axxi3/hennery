@@ -25,7 +25,7 @@ export const HeroSection = () => {
             <Tag>
               <span className="">
               <span className="mr-1.5 h-2 w-2 rounded-full "></span>
-              BEST AGENCY EVER
+              Founder-First Personal Branding
             </span>
             </Tag>
           
@@ -37,13 +37,13 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="text-orange-400">Build a personal brand </span>
+            <span className="text-orange-400">We Help Entrepreneurs turn their    </span>
             <br />
             <span className="relative">
-            that gets  <span className="inline-block md:mx-2">◆</span>seen
+            expertise into <span className="inline-block md:mx-2">◆</span> a profitable
             </span>
             <br />
-            <span className="text-orange-400">trusted and followed.</span>
+            <span className="text-orange-400">personal brand.</span>
           </motion.h1>
           
           <motion.p 
@@ -52,8 +52,8 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            We help entrepreneurs become unforgettable, with content and media that builds trust and drives growth.
-          </motion.p>
+           Leverage your expertise to build a personal brand that gets trusted and followed. With a smart mix of strategy, content creation, and media systems designed for long-term growth.
+</motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}

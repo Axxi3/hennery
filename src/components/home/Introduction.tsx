@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import Tag from "../ui/Tag";
 
-const text = `At Henry Brand Labs, we believe branding is about more than just visibility — it's about creating lasting impact. 
-Para - Our team of strategists, designers, and media experts crafts custom brand strategies to build loyalty, drive engagement, and ensure long-term success.`;
+const text = `At Henry Brand Labs, we believe branding is about more than just visibility — it's about creating lasting impact.
+Our team of strategists, designers, and media experts crafts custom brand strategies to build loyalty, drive engagement, and ensure long-term success.`;
 const words = text.split(" "); // Split by spaces to get words
 
 export default function Introduction() {
@@ -28,14 +28,14 @@ export default function Introduction() {
     }, [wordIndex]);
 
     return (
-        <section className="py-24 relative flex flex-col justify-center items-center lg:px-40">
+        <section id="about-us" className="py-24 relative flex flex-col justify-center items-center lg:px-40">
             <div className="md:w-full container relative md:px-[4%]">
                 <div className="sticky top-5 lg:top-36"> {/* Adjusted sticky positioning */}
                     <div className="flex justify-center">
-                        <Tag>Introducing Techidata</Tag>
+                        <Tag>Who Are We?</Tag>
                     </div>
 
-                    <div className="text-4xl md:text-5xl md:leading-[55px] leading-[45px] text-center font-medium mt-8 text-white">
+                    <div className="text-2xl px-4 md:text-5xl md:leading-[55px] leading-[45px] text-center font-medium mt-8 text-white">
                         <span>Your creative process deserves better.</span>{" "}
                         <div className="min-h-[220px] md:min-h-[165px]"> {/* Fixed height container for text */}
                             {words.map((word, index) => (

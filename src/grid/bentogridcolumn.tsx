@@ -130,7 +130,7 @@ const SkeletonOne = () => {
       initial="initial"
       whileHover="hover"
       variants={variants}
-      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
+      className="flex flex-1 w-full min-h-[9.2rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
     >
       <motion.div
         variants={itemVariants}
@@ -152,9 +152,7 @@ const SkeletonOne = () => {
         </div>
       </motion.div>
       
-      <motion.div className="text-white/80 text-sm">
-        Craft your brand story, ICP research & content pillars
-      </motion.div>
+      
     </motion.div>
   );
 };
