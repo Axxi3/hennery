@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 interface CardProps {
   icon: React.ReactNode;
@@ -7,48 +8,93 @@ interface CardProps {
 }
 
 export default function HenneryCard({ icon, title, description }: CardProps) {
+  const cardRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [positions, setPositions] = useState<number[][]>([]);
+
+  useEffect(() => {
+    const generatedPositions = Array.from({ length: 6 }, () => [
+      15 + Math.random() * 70,
+      15 + Math.random() * 70,
+    ]);
+    setPositions(generatedPositions);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2, rootMargin: "0px" }
+    );
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) {
+        observer.unobserve(cardRef.current);
+      }
+    };
+  }, []);
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+  };
+
+  const titleVariants = {
+    hidden: { opacity: 0, y: -20 },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.5, type: "spring", stiffness: 100 } }
+  };
+
+  const iconContainerVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { delay: 0.4, duration: 0.5, type: "spring", stiffness: 100 } }
+  };
+
+  const iconVariants = {
+    hidden: { scale: 0.6, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { delay: 0.6, duration: 0.3, type: "spring", stiffness: 200 } }
+  };
+
+  const dotsVariants = {
+    hidden: { opacity: 0 },
+    visible: (i: number) => ({ opacity: 0.4, transition: { delay: 0.7 + (i * 0.1), duration: 0.4 } })
+  };
+
+  const descriptionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { delay: 0.8, duration: 0.5 } }
+  };
+
   return (
-    <div
+    <motion.div
+      ref={cardRef}
       className="max-w-[400px] w-full rounded-3xl pt-5 overflow-hidden text-center"
-      style={{
-        background: "radial-gradient(46% 31% at 50% 0%, #262626 0%, #141414 100%)",
-      }}
+      style={{ background: "radial-gradient(46% 31% at 50% 0%, #262626 0%, #141414 100%)" }}
+      initial="hidden"
+      animate={isVisible ? "visible" : "hidden"}
+      variants={cardVariants}
     >
       <div className="flex flex-col items-center p-4">
-        {/* Title on top */}
-        <h1 className="text-white text-2xl font-bold mb-6">{title}</h1>
-
-        {/* Image section with grid background */}
+        <motion.h1 className="text-white text-2xl font-bold mb-6" variants={titleVariants}>{title}</motion.h1>
         <div className="w-full aspect-[16/9] bg-black relative rounded-3xl overflow-hidden flex items-center justify-center mb-6">
-          {/* Grid pattern */}
-          <div
-            className="absolute inset-0"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='grid' width='40' height='40' patternUnits='userSpaceOnUse'%3E%3Cpath d='M 40 0 L 0 0 0 40' fill='none' stroke='rgba(107, 114, 128, 0.2)' stroke-width='1'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23grid)'/%3E%3C/svg%3E")`,
-              backgroundSize: "40px 40px",
-            }}
-          />
-          {/* Random background dots */}
-          {[1, 2, 3, 4].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-gray-500/40 rounded-full"
-              style={{
-                left: `${15 + Math.random() * 70}%`,
-                top: `${15 + Math.random() * 70}%`,
-              }}
-            />
+          {positions.map((pos, i) => (
+            <motion.div key={i} className="absolute w-1 h-1 bg-gray-500/40 rounded-full" style={{ left: `${pos[0]}%`, top: `${pos[1]}%` }} custom={i} variants={dotsVariants} />
           ))}
-
-          {/* Icon inside orange gradient circle */}
-          <div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center relative z-10 shadow-lg shadow-orange-900/20">
-            {icon}
-          </div>
+          <motion.div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center relative z-10 shadow-lg shadow-orange-900/20" variants={iconContainerVariants}>
+            <motion.div variants={iconVariants} className="text-white" whileHover={{ rotate: [0, -10, 10, -5, 5, 0], transition: { duration: 0.5 } }}>
+              {icon}
+            </motion.div>
+          </motion.div>
         </div>
-
-        {/* Description at bottom */}
-        <p className="text-gray-400 text-md leading-relaxed px-2">{description}</p>
+        <motion.p className="text-gray-400 text-md leading-relaxed px-2" variants={descriptionVariants}>{description}</motion.p>
       </div>
-    </div>
+    </motion.div>
   );
 }

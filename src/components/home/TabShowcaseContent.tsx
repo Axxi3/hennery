@@ -9,18 +9,18 @@ import TabButton from '../ui/TabButton';
 
  const showcaseData = [
     {
-      heading: "D2C Founders & Entrepreneurs",
-      description: "Build trust and visibility by becoming the face of your brand.",
+      heading: "D2C Founders Building a Personal Brand",
+      description: " You're ready to become the face of your business, building trust, authority, and community.",
       image: "https://images.pexels.com/photos/7567486/pexels-photo-7567486.jpeg"
     },
     {
-      heading: "Coaches & Early-Stage Creators",
-      description: "Grow your audience and authority without relying on ads.",
+      heading: "Established Founders Ready for the Next Level",
+      description: "You’ve built something amazing — now it’s time to strengthen your personal brand for new growth.",
       image: "https://images.pexels.com/photos/7989247/pexels-photo-7989247.jpeg"
     },
     {
-      heading: "Established Founders",
-      description: "Level up your personal brand and unlock new opportunities.",
+      heading: "Experts and Coaches Seeking Authority Positioning",
+      description: "You want to be seen as the go-to expert in your niche, attracting leads and building loyalty without paid ads",
       image: "https://images.pexels.com/photos/8348457/pexels-photo-8348457.jpeg"
     }
   ];

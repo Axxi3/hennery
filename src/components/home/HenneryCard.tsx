@@ -5,13 +5,13 @@ import HenneryTag from "../ui/HenneryTags";
 // Make sure this is the updated tag
 export default function HenneryCardContainer() {
   return (
-    <div id="why-us" className="w-full bg-black min-h-screen py-16 px-4">
+    <div id="why-us" className="w-full bg-background min-h-screen py-16 px-4">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <p className="text-orange-500 font-medium mb-2">WHY US</p>
-        <h2 className="text-white text-4xl font-medium mb-3">Why Henry Brand Labs?</h2>
-        <p className="text-gray-400">Because good content is everywhere. But great brands? They&apos;re built differently.</p>
-      </div>
+  <p className="text-orange-500 font-medium text-[14px] md:text-[18px] mb-2">WHY US</p>
+  <h2 className="text-white text-[26px] md:text-[36px] lg:text-[42px] font-medium mb-3">Why Henry Brand Labs?</h2>
+  <p className="text-gray-400 text-[16px] md:text-[18px]">Because good content is everywhere. But great brands? They&apos;re built differently.</p>
+</div>
 
       {/* Cards using Flex */}
       <div className="flex justify-center w-full">

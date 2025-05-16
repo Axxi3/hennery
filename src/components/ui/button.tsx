@@ -8,9 +8,9 @@ const classes = cva(
     variants: {
       variant: {
         primary:
-          "bg-[#F3631F] text-white border-[#F3631F] hover:bg-[#E05517] hover:border-[#E05517]",
+          "bg-[#F0CF3B] text-black border-[#F0CF3B] hover:bg-[#E05517] hover:border-[#E05517]",
         secondary:
-          "border-[#F3631F] text-[#F3631F] bg-transparent hover:bg-[#FFF1EC]",
+          "border-[#F0CF3B] text-[#F0CF3B] bg-transparent hover:bg-[#FFF1EC]",
       },
     },
   }

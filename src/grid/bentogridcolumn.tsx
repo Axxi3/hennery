@@ -17,33 +17,33 @@ import { motion } from "motion/react";
 
 export function BentoGridSecondDemo() {
   return (
-    <div className="w-full bg-black py-24">
+    <div className="w-full bg-background py-24">
       <div className="max-w-6xl flex flex-col items-center mx-auto text-center mb-12">
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-orange-500 font-medium mb-2"
-        >
-          WHY US
-        </motion.p>
-        <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-white text-4xl font-medium mb-3"
-        >
-          What You Get
-        </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-gray-400 max-w-4xl"
-        >
-          When you work with HenryBrandLabs, you&apos;re not just getting content — you&apos;re building a magnetic personal brand that commands attention and drives growth.
-        </motion.p>
-      </div>
+  <motion.p 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="text-orange-500 font-medium text-[14px] md:text-[18px] mb-2"
+  >
+    WHY US
+  </motion.p>
+  <motion.h2 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.2 }}
+    className="text-white text-[26px] md:text-[36px] lg:text-[42px] font-medium mb-3"
+  >
+    What You Get
+  </motion.h2>
+  <motion.p 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, delay: 0.4 }}
+    className="text-gray-400 text-[16px] md:text-[18px] max-w-4xl"
+  >
+    When you work with HenryBrandLabs, you&apos;re not just getting content — you&apos;re building a magnetic personal brand that commands attention and drives growth.
+  </motion.p>
+</div>
    
       <div className="max-w-4xl px-6 mx-auto space-y-6">
   {/* First Row: 3 items */}
@@ -327,35 +327,35 @@ const SkeletonFour = () => {
     { name: "LinkedIn", color: "bg-gradient-to-r from-blue-600 to-blue-400" },
     { name: "YouTube", color: "bg-gradient-to-r from-red-600 to-red-400" },
     { name: "Twitter", color: "bg-gradient-to-r from-blue-400 to-blue-300" },
-    { name: "TikTok", color: "bg-gradient-to-r from-black to-gray-800" },
+    
   ];
 
-  return (
-    <motion.div
-      initial="initial"
-      whileHover="hover"
-      variants={containerVariants}
-      className="flex flex-1 w-full h-[16rem] dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
-    >
-      <div className="grid grid-cols-3 gap-3 w-full">
-        {platforms.map((platform, i) => (
-          <motion.div
-            custom={i}
-            variants={videoVariants}
-            key={`platform-${i}`}
-            className={`rounded-lg ${platform.color} p-3 flex items-center justify-center h-16 ${i === 4 && "col-span-3"}`}
-          >
-            <IconVideo className="h-5 w-5 text-white mr-2" />
-            <span className="text-white text-xs font-medium">{platform.name}</span>
-          </motion.div>
-        ))}
-      </div>
-      
-      <motion.div className="text-white/80 text-sm text-center mt-4">
-        Polished videos, posts & consistent distribution
-      </motion.div>
+return (
+  <motion.div
+    initial="initial"
+    whileHover="hover"
+    variants={containerVariants}
+    className="flex flex-1 w-full h-[16rem] pb-3 dark:bg-dot-white/[0.2] bg-dot-black/[0.2] flex-col justify-center items-center"
+  >
+    <div className="grid grid-cols-2 gap-3 w-full">
+      {platforms.map((platform, i) => (
+        <motion.div
+          custom={i}
+          variants={videoVariants}
+          key={`platform-${i}`}
+          className={`rounded-lg ${platform.color} p-3 flex items-center justify-center h-16`}
+        >
+          <IconVideo className="h-5 w-5 text-white mr-2" />
+          <span className="text-white text-xs font-medium">{platform.name}</span>
+        </motion.div>
+      ))}
+    </div>
+    
+    <motion.div className="text-white/80 text-sm text-center mt-4">
+      Polished videos, posts & consistent distribution
     </motion.div>
-  );
+  </motion.div>
+);
 };
 
 const SkeletonFive = () => {
@@ -449,7 +449,7 @@ const items = [
     title: "Full Post-Production & Distribution",
     description: (
       <span className="text-sm">
-        We edit, polish, and post your content to grow your reach and authority.
+        We specialize in editing, polishing, and posting your content to help you expand your audience and establish your authority. Our expert team ensures your message is clear, engaging, and optimized for maximum impact across various platforms.
       </span>
     ),
     header: <SkeletonFour />,

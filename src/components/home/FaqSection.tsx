@@ -102,19 +102,18 @@ const FAQSection: React.FC = () => {
     <div id='faq' className="w-full">
       <div className="max-w-4xl mx-auto px-6 md:px-8 py-20">
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Frequently Asked Questions
-          </h2>
-          <div className="w-24 h-1 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-300">
-            Everything you need to know about our services
-          </p>
-        </motion.div>
+  className="text-center mb-16"
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+>
+  <h2 className="text-[26px] md:text-[36px] lg:text-[42px] font-bold text-white mb-1">
+    Frequently Asked Questions
+  </h2>
+  <p className="text-[16px] md:text-[18px] lg:text-[20px] text-gray-300">
+    Everything you need to know about our services
+  </p>
+</motion.div>
 
         <motion.div
           className="space-y-0 rounded-2xl bg-opacity-50 backdrop-blur-sm p-6 md:p-10 shadow-2xl"

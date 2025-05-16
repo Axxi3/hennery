@@ -28,7 +28,7 @@ export default function Introduction() {
     }, [wordIndex]);
 
     return (
-        <section id="about-us" className="py-24 relative flex flex-col justify-center items-center lg:px-40">
+        <section id="about-us" className="py-24 bg-background relative flex flex-col justify-center items-center lg:px-40">
             <div className="md:w-full container relative md:px-[4%]">
                 <div className="sticky top-5 lg:top-36"> {/* Adjusted sticky positioning */}
                     <div className="flex justify-center">
