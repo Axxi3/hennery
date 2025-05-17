@@ -87,7 +87,7 @@ export default function Card({ icon, title, description }: CardProps) {
               variants={dotsVariants}
             />
           ))}
-          <motion.div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-full flex items-center justify-center relative z-10 shadow-lg shadow-orange-900/20" variants={iconContainerVariants}>
+          <motion.div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center relative z-10 shadow-lg shadow-orange-900/20" variants={iconContainerVariants}>
             <motion.div variants={iconVariants} className="text-white" whileHover={{ rotate: [0, -10, 10, -5, 5, 0], transition: { duration: 0.5 } }}>
               {icon}
             </motion.div>

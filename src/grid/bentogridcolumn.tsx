@@ -23,7 +23,7 @@ export function BentoGridSecondDemo() {
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="text-orange-500 font-medium text-[14px] md:text-[18px] mb-2"
+    className="text-yellow-500 font-medium text-[14px] md:text-[18px] mb-2"
   >
     WHY US
   </motion.p>

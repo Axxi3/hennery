@@ -5,7 +5,7 @@ export default function TabSection() {
     <div className="w-full bg-black min-h-screen pt-16 px-4">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <p className="text-orange-500 font-medium text-[14px] md:text-[18px] mb-2">
+        <p className="text-yellow-500 font-medium text-[14px] md:text-[18px] mb-2">
           WHY US
         </p>
         <h2 className="text-white text-[26px] md:text-[36px] lg:text-[42px] font-medium mb-3">

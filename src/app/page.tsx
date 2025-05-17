@@ -1,6 +1,5 @@
-'use client';
+"use client";
 import CardContainer from "@/components/home/CardContainer";
-import { HeroSection } from "@/components/home/HeroSection";
 import Introduction from "@/components/home/Introduction";
 import Navbar from "@/components/home/Navbar";
 import TabSection from "@/components/home/TabSection";
@@ -9,6 +8,10 @@ import { BentoGridSecondDemo } from "@/grid/bentogridcolumn";
 import FAQSection from "@/components/home/FaqSection";
 import Foot from "@/components/home/Footer";
 import HenneryCardContainer from "@/components/home/HenneryCard";
+import { HeroSection } from "@/components/home/HeroSection";
+
+
+
 
 export default function Home() {
   return (
@@ -49,7 +52,7 @@ export default function Home() {
             linear-gradient(to bottom, rgba(249, 115, 22, 0.15) 1px, transparent 1px);
           opacity: 0.8;
         }
-        
+
         @media (max-width: 768px) {
           .bg-grid-pattern {
             background-size: 30px 30px;

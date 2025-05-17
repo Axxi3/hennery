@@ -52,7 +52,7 @@ export default function Process(): JSX.Element {
                   <div className="text-[28px] md:text-[35px] opacity-75">0{index + 1}</div>
                   <h3 className="text-[22px] md:text-[26px] tracking-tight">{item.tag}</h3>
                   <p className="text-[14px] md:text-[18px] opacity-75">{item.body}</p>
-                  <p className="text-[14px] md:text-[15px] rounded-4xl flex w-fit px-4 py-1 mt-5 text-black bg-[#F0CF3B] mx-auto md:mx-0">
+                  <p className="text-[14px] md:text-[15px] flex w-fit px-4 py-1 mt-5 text-black bg-[#F0CF3B] mx-auto md:mx-0">
                     {item.output}
                   </p>
                 </div>

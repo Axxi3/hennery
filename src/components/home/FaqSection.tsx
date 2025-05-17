@@ -62,18 +62,18 @@ const FAQItem: React.FC<FAQItemProps> = ({
         onClick={toggleOpen}
         className="flex justify-between items-center w-full text-left group"
       >
-        <h3 className="text-lg md:text-xl font-medium text-gray-100 group-hover:text-orange-500 transition-colors duration-300">
+        <h3 className="text-lg md:text-xl font-medium text-gray-100  group-hover:text-yellow-500 transition-colors duration-300">
           {question}
         </h3>
         <div
           className={`flex items-center justify-center w-8 h-8 rounded-full ml-4 flex-shrink-0 transition-all duration-300 ${
-            isOpen ? 'bg-orange-500 rotate-180' : 'bg-gray-800'
+            isOpen ? 'bg-yellow-500 rotate-180' : 'bg-gray-800'
           }`}
         >
           {isOpen ? (
             <Minus size={18} className="text-white" />
           ) : (
-            <Plus size={18} className="text-orange-300" />
+            <Plus size={18} className="text-yellow-300" />
           )}
         </div>
       </button>

@@ -15,7 +15,7 @@ export default function HenneryTag({ name, icon, className, ...otherProps }: Tag
       )}
       {...otherProps}
     >
-      <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[#1f1f1f] text-orange-500">
+      <div className="flex items-center justify-center w-7 h-7 rounded-full bg-[#1f1f1f] text-yellow-500">
         {icon}
       </div>
       <span className="text-sm font-medium">{name}</span>

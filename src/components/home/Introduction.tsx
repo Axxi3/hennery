@@ -50,7 +50,7 @@ export default function Introduction() {
                                 </span>
                             ))}
                         </div>
-                        <span className="text-[#E87811] block mt-4">
+                        <span className="text-[#F0CF3B] block mt-4">
                             That&apos;s why we started Henry Brand Labs.
                         </span>
                     </div>

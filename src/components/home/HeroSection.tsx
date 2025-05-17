@@ -8,22 +8,46 @@ import Tag from "../ui/Tag";
 
 export const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
- useEffect(() => {
+  const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const [isMounted, setIsMounted] = useState(false);
+  
+  useEffect(() => {
+    setIsMounted(true);
+    
+    // Initialize window size
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+    
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
+    
+    const handleResize = () => {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      });
+    };
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
   // Calculate movement based on mouse position
   const calculateMovement = (factor = 1, baseOffset = { x: 0, y: 0 }) => {
-    const moveX = (mousePosition.x / window.innerWidth - 0.5) * factor;
-    const moveY = (mousePosition.y / window.innerHeight - 0.5) * factor;
+    if (!isMounted) {
+      return { x: baseOffset.x, y: baseOffset.y };
+    }
+    
+    const moveX = (mousePosition.x / windowSize.width - 0.5) * factor;
+    const moveY = (mousePosition.y / windowSize.height - 0.5) * factor;
     
     return {
       x: baseOffset.x + moveX * 20,
@@ -54,19 +78,6 @@ export const HeroSection = () => {
       >
         ▶
       </motion.div>
-
-      {/* <motion.div 
-        className="absolute text-yellow-300 text-2xl"
-        style={{
-          left: "15%", 
-          top: "40%",
-          zIndex: 5
-        }}
-        animate={calculateMovement(1.5, { x: 0, y: 0 })}
-        transition={{ type: "spring", stiffness: 40 }}
-      >
-        ◀
-      </motion.div> */}
 
       <motion.div 
         className="absolute text-green-400 text-2xl"

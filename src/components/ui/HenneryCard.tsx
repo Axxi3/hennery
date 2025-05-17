@@ -87,7 +87,7 @@ export default function HenneryCard({ icon, title, description }: CardProps) {
           {positions.map((pos, i) => (
             <motion.div key={i} className="absolute w-1 h-1 bg-gray-500/40 rounded-full" style={{ left: `${pos[0]}%`, top: `${pos[1]}%` }} custom={i} variants={dotsVariants} />
           ))}
-          <motion.div className="w-24 h-24 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center relative z-10 shadow-lg shadow-orange-900/20" variants={iconContainerVariants}>
+          <motion.div className="w-24 h-24 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center relative z-10 shadow-lg shadow-yellow-900/20" variants={iconContainerVariants}>
             <motion.div variants={iconVariants} className="text-white" whileHover={{ rotate: [0, -10, 10, -5, 5, 0], transition: { duration: 0.5 } }}>
               {icon}
             </motion.div>

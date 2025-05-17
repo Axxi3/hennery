@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-
+import Image from "next/image";
 
 const navLinks = [
   { label: "About us", href: "#about-us" },
@@ -13,13 +13,15 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 z-50 w-full  text-white py-8">
-      <div className="max-w-4xl mx-auto px-4 ">
+    <header className="fixed top-0 z-50 w-full text-white py-8">
+      <div className="max-w-4xl mx-auto px-4">
         {/* Rounded container with all nav elements */}
         <div className="rounded-full border bg-black border-gray-600 flex items-center justify-between px-6 py-4">
-          {/* Left side - empty in this design */}
-          <div className="w-16"></div>
-          
+          {/* Left side - Logo */}
+          <div className="flex items-center">
+            <Image src="/logo.png" alt="Logo" width={40} height={40} className="mr-3" />
+          </div>
+
           {/* Center - Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navLinks.map((link) => (
@@ -29,11 +31,10 @@ export default function Navbar() {
                 className="text-gray-300 hover:text-white transition duration-150 ease-in-out text-base"
               >
                 {link.label}
-               
               </a>
             ))}
           </nav>
-          
+
           {/* Right side - CTA Button */}
           <div>
             <a
