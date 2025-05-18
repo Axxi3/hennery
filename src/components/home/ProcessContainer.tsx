@@ -3,7 +3,7 @@
 import React, { JSX, useRef } from 'react';
 import { motion, useTransform, useScroll } from 'framer-motion';
 import processSteps from '../../assets/Process';
-import Tag from '../ui/Tag';
+
 
 export default function Process(): JSX.Element {
   const targetRef = useRef<HTMLDivElement | null>(null);
@@ -19,7 +19,9 @@ export default function Process(): JSX.Element {
       <div className="w-full sticky top-7 md:h-screen  flex flex-col gap-[15px] justify-center">
         {/* Section Title */}
         <div className="w-full flex items-center justify-center gap-2">
-          <Tag>How it Works?</Tag>
+          <p className="text-yellow-500 font-bold uppercase text-[14px] md:text-[18px] mb-0">
+          How it works?
+        </p>
         </div>
 
         <div className="w-full">
@@ -52,7 +54,8 @@ export default function Process(): JSX.Element {
                   <div className="text-[28px] md:text-[35px] opacity-75">0{index + 1}</div>
                   <h3 className="text-[22px] md:text-[26px] tracking-tight">{item.tag}</h3>
                   <p className="text-[14px] md:text-[18px] opacity-75">{item.body}</p>
-                  <p className="text-[14px] md:text-[15px] flex w-fit px-4 py-1 mt-5 text-black bg-[#F0CF3B] mx-auto md:mx-0">
+                  <p className="text-[14px] md:text-[15px]  gap-2 items-center rounded-4xl flex w-fit px-4 py-1 mt-5 text-black bg-[#F0CF3B] mx-auto md:mx-0">
+                   <span className='font-bold'>Output: </span>
                     {item.output}
                   </p>
                 </div>

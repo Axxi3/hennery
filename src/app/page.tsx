@@ -26,7 +26,7 @@ export default function Home() {
 
       {/* Decorative Light Effects */}
       <div className="fixed -top-40 -left-40 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl pointer-events-none"></div>
-      <div className="fixed bottom-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div className="fixed bottom-0 right-0 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl pointer-events-none"></div>
       <div className="fixed top-1/4 right-1/4 w-6 h-6 bg-orange-400/30 rounded-full blur-sm pointer-events-none"></div>
       <div className="fixed bottom-1/3 left-1/3 w-4 h-4 bg-orange-400/40 rounded-full blur-sm pointer-events-none"></div>
 
@@ -48,9 +48,9 @@ export default function Home() {
         .bg-grid-pattern {
           background-size: 50px 50px;
           background-image:
-            linear-gradient(to right, rgba(249, 115, 22, 0.15) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(249, 115, 22, 0.15) 1px, transparent 1px);
-          opacity: 0.8;
+            linear-gradient(to right, rgba(255, 255, 0, 0.3) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 0, 0.3) 1px, transparent 1px);
+          opacity: 1;
         }
 
         @media (max-width: 768px) {

@@ -5,29 +5,30 @@ import Button from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Tag from "../ui/Tag";
+import { ArrowRight } from "lucide-react";
 
 export const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const [isMounted, setIsMounted] = useState(false);
-  
+
   useEffect(() => {
     setIsMounted(true);
-    
+
     // Initialize window size
     setWindowSize({
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
     });
-    
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
-    
+
     const handleResize = () => {
       setWindowSize({
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
       });
     };
 
@@ -45,13 +46,13 @@ export const HeroSection = () => {
     if (!isMounted) {
       return { x: baseOffset.x, y: baseOffset.y };
     }
-    
+
     const moveX = (mousePosition.x / windowSize.width - 0.5) * factor;
     const moveY = (mousePosition.y / windowSize.height - 0.5) * factor;
-    
+
     return {
       x: baseOffset.x + moveX * 20,
-      y: baseOffset.y + moveY * 20
+      y: baseOffset.y + moveY * 20,
     };
   };
 
@@ -66,12 +67,12 @@ export const HeroSection = () => {
       </div>
 
       {/* Floating Arrow Elements */}
-      <motion.div 
+      <motion.div
         className="absolute text-purple-500 text-3xl"
         style={{
           top: "120px",
           right: "10%",
-          zIndex: 5
+          zIndex: 5,
         }}
         animate={calculateMovement(2, { x: 0, y: 0 })}
         transition={{ type: "spring", stiffness: 50 }}
@@ -79,12 +80,12 @@ export const HeroSection = () => {
         ▶
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="absolute text-green-400 text-2xl"
         style={{
-          bottom: "25%", 
+          bottom: "25%",
           right: "25%",
-          zIndex: 5
+          zIndex: 5,
         }}
         animate={calculateMovement(1.8, { x: 0, y: 0 })}
         transition={{ type: "spring", stiffness: 45 }}
@@ -92,13 +93,13 @@ export const HeroSection = () => {
         ▶
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="absolute text-lime-300 text-2xl"
         style={{
-          top: "7%", 
+          top: "7%",
           left: "12%",
           zIndex: 5,
-          transform: "rotate(45deg)"
+          transform: "rotate(45deg)",
         }}
         animate={calculateMovement(1.2, { x: 0, y: 0 })}
         transition={{ type: "spring", stiffness: 35 }}
@@ -106,12 +107,12 @@ export const HeroSection = () => {
         ▼
       </motion.div>
 
-      <motion.div 
+      <motion.div
         className="absolute text-orange-400 text-3xl"
         style={{
-          bottom: "20%", 
+          bottom: "20%",
           left: "20%",
-          zIndex: 5
+          zIndex: 5,
         }}
         animate={calculateMovement(1.7, { x: 0, y: 0 })}
         transition={{ type: "spring", stiffness: 30 }}
@@ -140,10 +141,13 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <span className="text-[#F0CF3B]">We Help Entrepreneurs turn their</span>
+            <span className="text-[#F0CF3B]">
+              We Help Entrepreneurs turn their
+            </span>
             <br />
             <span className="relative">
-              expertise into <span className="inline-block md:mx-2">◆</span> a profitable
+              expertise into <span className="inline-block md:mx-2">◆</span> a
+              profitable
             </span>
             <br />
             <span className="text-[#F0CF3B]">personal brand.</span>
@@ -154,7 +158,9 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Leverage your expertise to build a personal brand that gets trusted and followed. With a smart mix of strategy, content creation, and media systems designed for long-term growth.
+            Leverage your expertise to build a personal brand that gets trusted
+            and followed. With a smart mix of strategy, content creation, and
+            media systems designed for long-term growth.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -162,8 +168,11 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.3 }}
           >
             <div className="mt-0 flex justify-center gap-4">
-              <Button variant="primary">Get Started</Button>
-              <Button variant="secondary">Contact Us</Button>
+              <Button variant="primary" className="flex items-center gap-2">
+                Book Free Discovery Call
+                <ArrowRight className="w-4 h-4" />
+              </Button>
+              {/* <Button variant="secondary">Contact Us</Button> */}
             </div>
           </motion.div>
         </div>

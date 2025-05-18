@@ -17,15 +17,15 @@ import { motion } from "motion/react";
 
 export function BentoGridSecondDemo() {
   return (
-    <div className="w-full bg-background py-24">
+    <div className="w-full bg-black py-24">
       <div className="max-w-6xl flex flex-col items-center mx-auto text-center mb-12">
   <motion.p 
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.5 }}
-    className="text-yellow-500 font-medium text-[14px] md:text-[18px] mb-2"
+    className="text-yellow-500 font-bold text-[14px] md:text-[18px] mb-2"
   >
-    WHY US
+    WHY US?
   </motion.p>
   <motion.h2 
     initial={{ opacity: 0, y: 20 }}
