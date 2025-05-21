@@ -2,7 +2,7 @@
 import CardContainer from "@/components/home/CardContainer";
 import Introduction from "@/components/home/Introduction";
 import Navbar from "@/components/home/Navbar";
-import TabSection from "@/components/home/TabSection";
+
 import Process from "@/components/home/ProcessContainer";
 import { BentoGridSecondDemo } from "@/grid/bentogridcolumn";
 import FAQSection from "@/components/home/FaqSection";
@@ -35,7 +35,6 @@ export default function Home() {
         <HeroSection />
         <CardContainer />
         <Introduction />
-        <TabSection />
         <HenneryCardContainer />
         <Process />
         <BentoGridSecondDemo />

@@ -19,7 +19,7 @@ export default function Process(): JSX.Element {
       <div className="w-full sticky top-7 md:h-screen  flex flex-col gap-[15px] justify-center">
         {/* Section Title */}
         <div className="w-full flex items-center justify-center gap-2">
-          <p className="text-yellow-500 font-bold uppercase text-[14px] md:text-[18px] mb-0">
+          <p className="text-yellow-500 font-bold uppercase text-[14px] md:text-[20px] mb-0">
           How it works?
         </p>
         </div>
@@ -47,13 +47,13 @@ export default function Process(): JSX.Element {
                   <img
                     src={item.icon.src}
                     alt=""
-                    className="mix-blend-screen w-[120px] md:w-[100px] h-auto"
+                    className="mix-blend-screen w-[150px] md:w-[120px] h-auto"
                   />
                 </div>
                 <div className="flex flex-col justify-between w-full md:w-[50%] pl-0 md:pl-8 mt-6 md:mt-0 text-center md:text-left">
                   <div className="text-[28px] md:text-[35px] opacity-75">0{index + 1}</div>
-                  <h3 className="text-[22px] md:text-[26px] tracking-tight">{item.tag}</h3>
-                  <p className="text-[14px] md:text-[18px] opacity-75">{item.body}</p>
+                  <h3 className="text-[22px] md:text-[32px] tracking-tight mb-2">{item.tag}</h3>
+                  <p className="text-[14px] md:text-[22px] opacity-75">{item.body}</p>
                   <p className="text-[14px] md:text-[15px]  gap-2 items-center rounded-4xl flex w-fit px-4 py-1 mt-5 text-black bg-[#F0CF3B] mx-auto md:mx-0">
                    <span className='font-bold'>Output: </span>
                     {item.output}

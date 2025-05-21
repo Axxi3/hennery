@@ -2,7 +2,7 @@
 import { useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
-import Tag from "../ui/Tag";
+
 
 const text = `At Henry Brand Labs, we believe branding is about more than just visibility — it's about creating lasting impact.
 Our team of strategists, designers, and media experts crafts custom brand strategies to build loyalty, drive engagement, and ensure long-term success.`;
@@ -32,7 +32,7 @@ export default function Introduction() {
             <div className="md:w-full container relative md:px-[4%]">
                 <div className="sticky top-5 lg:top-36"> {/* Adjusted sticky positioning */}
                     <div className="flex justify-center">
-                        <Tag>Who Are We?</Tag>
+                        <p className="text-[#F0CF3B] uppercase font-bold text-[14px] md:text-[18px]">Who Are We?</p>
                     </div>
 
                     <div className="text-2xl px-4 md:text-5xl md:leading-[55px] leading-[45px] text-center font-medium mt-8 text-white">
