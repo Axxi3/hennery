@@ -19,14 +19,14 @@ export default function Process(): JSX.Element {
       <div className="w-full sticky top-7 md:h-screen  flex flex-col gap-[15px] justify-center">
         {/* Section Title */}
         <div className="w-full flex items-center justify-center gap-2">
-          <p className="text-yellow-500 font-bold uppercase text-[14px] md:text-[20px] mb-0">
+          <p className="text-yellow-500 font-bold uppercase text-[14px] md:text-[22px] mb-0">
           How it works?
         </p>
         </div>
 
         <div className="w-full">
           <p className="lg:text-[42px] md:text-[35px] text-[28px] tracking-tighter leading-[43px] text-center">
-            We handle everything, from content creation to platform adaptation
+            Turning ideas into influence — step by step
           </p>
         </div>
 

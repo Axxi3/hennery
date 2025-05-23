@@ -6,11 +6,11 @@ export default function CardContainer() {
     <div className="w-full bg-black min-h-screen py-16 px-4">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <p className="text-[#F0CF3B] uppercase font-bold text-[14px] md:text-[18px] mb-4">
-          Skill Isn&apos;t Enough — Visibility Is Everything
-        </p>
-        <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-medium mb-4">
+        <p className="text-white uppercase font-bold text-[14px] md:text-[22px] mb-4">
           Why Build a Personal Brand??
+        </p>
+        <h2 className="text-[#F0CF3B] text-2xl md:text-4xl lg:text-5xl font-medium mb-4">
+          Skill Isn&apos;t Enough — Visibility Is Everything
         </h2>
         <p className="text-gray-400 text-base md:text-lg lg:text-xl">
           You might be the best at what you do, but if no one knows you, it

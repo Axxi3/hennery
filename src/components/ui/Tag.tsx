@@ -8,7 +8,7 @@ export default function Tag(props:HTMLAttributes<HTMLDivElement>){
             <span>
                 &#10038;
             </span>
-            <span className="text-sm">
+            <span className="text-[20px] ">
                 {children}
             </span>
         </div>

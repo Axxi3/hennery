@@ -110,7 +110,7 @@ const FAQSection: React.FC = () => {
   <h2 className="text-[26px] md:text-[36px] lg:text-[42px] font-bold text-white mb-1">
     Frequently Asked Questions
   </h2>
-  <p className="text-[16px] md:text-[18px] lg:text-[20px] text-gray-300">
+  <p className="text-[16px] md:text-[18px] lg:text-[22px] text-gray-300">
     Everything you need to know about our services
   </p>
 </motion.div>

@@ -10,7 +10,7 @@ const classes = cva(
         primary:
           "bg-[#F0CF3B] text-black border-[#F0CF3B] hover:bg-[#E05517] hover:border-[#E05517]",
         secondary:
-          "border-[#F0CF3B] text-[#F0CF3B] bg-transparent hover:bg-[#FFF1EC]",
+          "border-[#F0CF3B] text-[#F0CF3B] transition duration-100 hover:text-black bg-transparent hover:bg-[#F0CF3B]",
       },
     },
   }

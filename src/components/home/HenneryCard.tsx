@@ -5,10 +5,10 @@ import HenneryTag from "../ui/HenneryTags";
 // Make sure this is the updated tag
 export default function HenneryCardContainer() {
   return (
-    <div id="why-us" className="w-full bg-black min-h-screen py-16 px-4">
+    <div id="why-us" className="w-full bg-black min-h-screen pt-16 px-4">
       {/* Section Header */}
       <div className="max-w-6xl mx-auto text-center mb-12">
-        <p className="text-yellow-500 uppercase font-bold text-[14px] md:text-[18px] mb-0">
+        <p className="text-yellow-500 uppercase font-bold text-[14px] md:text-[22px] mb-0">
           What&apos;s the secret sauce?
         </p>
         <h2 className="text-white text-[26px] md:text-[36px] lg:text-[42px] font-medium mb-1">

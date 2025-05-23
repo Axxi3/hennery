@@ -32,7 +32,7 @@ export default function Introduction() {
             <div className="md:w-full container relative md:px-[4%]">
                 <div className="sticky top-5 lg:top-36"> {/* Adjusted sticky positioning */}
                     <div className="flex justify-center">
-                        <p className="text-[#F0CF3B] uppercase font-bold text-[14px] md:text-[18px]">Who Are We?</p>
+                        <p className="text-[#F0CF3B] uppercase font-bold text-[14px] md:text-[22px]">Who Are We?</p>
                     </div>
 
                     <div className="text-2xl px-4 md:text-5xl md:leading-[55px] leading-[45px] text-center font-medium mt-8 text-white">
